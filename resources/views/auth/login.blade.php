@@ -1,114 +1,67 @@
 @extends('layouts.app')
 @section('content')
-<!-- Log In page -->
-<div style="background-image: url('images/fundo.jpg');background-repeat: no-repeat;background-size: cover" class="row vh-100 ">
-    <div class="col-12 align-self-center">
-        <div class="auth-page"><br><br>
-            <div class="card auth-card shadow-lg">
-                <div class="card-body">
-                    <div class="px-3">
-                        <div class="auth-logo-box">
-                            <a href="#" class="logo logo-admin"><img src="{{ asset('images/logoM.svg') }}" width="65" height="65" alt="logo" class="auth-logo"></a>
-                        </div><!--end auth-logo-box-->
-                        
-                        <div class="text-center auth-logo-text">
-                            <h4 style="color: #28a745" class="mt-0 mb-3 mt-5">Gest Espaço</h4>
-                            <hr> 
-                        </div> <!--end auth-logo-text--> 
-                        
-                        <!-- Alerta de erro ao logar -->
-                        @if(session('error'))
-                            <br>
-                            <div style="height:40px" class="alert icon-custom-alert  alert-outline-pink b-round fade show" role="alert">                                            
-                                <div class="alert-text">
-                                    {{ session('error')}}
-                                </div>
-                                
-                                <div class="alert-close">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true"><i class="mdi mdi-close text-danger"></i></span>
-                                    </button>
-                                </div>
-                            </div>  
-                        @endif
-                                               
-                        <form id="ValidarFormLogin" method="post" class="form-horizontal auth-form my-4" action="{{ url('logar') }}">
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <form id="formularioLogar" method="post">
                             @csrf
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <span class="auth-form-icon">
-                                        <i class="dripicons-user"></i> 
-                                    </span>                                                                                                              
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Informe username">
-                                </div>                                    
-                            </div><!--end form-group--> 
-
-                            <div class="form-group">                 
-                                <div class="input-group mb-3"> 
-                                    <span class="auth-form-icon">
-                                        <i class="dripicons-lock"></i> 
-                                    </span>                                                       
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Informe password">
-                                </div>                               
-                            </div><!--end form-group--> 
-
-                            <div class="form-group row mt-4">
-                                <div class="col-sm-6 text-right">
-                                    <a href="{{ url('dashboard') }}" class="text-muted font-13"><i class="dripicons-lock"></i> Esqueceu a sua senha ?</a>                                    
-                                </div><!--end col--> 
-                            </div><!--end form-group--> 
-
-                            <div class="form-group mb-0 row">
-                                <div class="col-12 mt-2">
-                                    <button class="btn btn-primary btn-round btn-block waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
-                                </div><!--end col--> 
-                            </div> <!--end form-group-->                           
-                        </form><!--end form-->
-                    </div><!--end /div-->
-                    
-                </div><!--end card-body-->
-            </div><!--end card-->
-            
-        </div><!--end auth-page-->
-    </div><!--end col-->           
-</div><!--end row-->     
+                            <div class="text-center">
+                                <h3><img height="100" src="{{url('images/logo.png')}}"></h3>
+                            </div><br><br>
+                                <img  id="logando" src="{{ url('images/loader.gif') }}"/>
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Username </label>
+                                    <input class="form-control" name="username" type="text" id="username" required autofocus placeholder="Informe o username">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password">Senha</label>
+                                    <input class="form-control" name="password" type="password" required id="senha" placeholder="Informe a senha">
+                                </div>
+                                <div style="color:red;text-align:center" id="errorLogar"></div>
+                                <br>
+                                <div class="form-group mb-0 text-center">
+                                    <button class="btn btn-primary btn-block" type="submit"> Log In   <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            <div class="text-center">
+                                <h5><a href="#" class=" ml-1">Esqueceu a sua senha?</a></h5>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
-    // Validação do formulário do funcionário
-    $("#ValidarFormLogin").validate({
-		rules: {					
-			username: {
-				required: true,
-                pattern: /^[a-z]+[.]{1}[a-z]+$/
-			},
-			password: {
-				required: true 
-			}       
-		},
-		messages: {					
-			username: {
-                required: "O nome do utilizador deve ser fornecido.",
-                pattern: "O padrão do username é inválido.",
-			},
-            password: {
-				required: "A senha deve ser fornecida"
-			}
-		},
-		errorElement: "em",
-		errorPlacement: function ( error, element ) {
-			// Add the `invalid-feedback` class to the error element
-			error.addClass( "invalid-feedback" );
-			if ( element.prop( "type" ) === "checkbox" ) {
-				error.insertAfter( element.next( "label" ) );
-			} else {
-				error.insertAfter( element );
-			}
-		},
-		highlight: function ( element, errorClass, validClass ) {
-			$( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
-		},
-		unhighlight: function (element, errorClass, validClass) {
-			$( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
-		}
-    });    
+    $('#formularioLogar').submit(function(e){
+        e.preventDefault();
+        var request = new FormData(this);
+        $('#logando').show();
+        $.ajax({
+            url:"{{ url('logar') }}",
+            method: "POST",
+            data: request,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function(data){
+                $('#logando').hide();
+                if(data == 1){
+                    location.href="dashboard";
+                }else{
+                    document.getElementById("email").style.border = "1px solid red";
+                    document.getElementById("senha").style.border = "1px solid red";
+                    document.getElementById("errorLogar").innerHTML = "Erro ao efectuar o login, verifique o email ou a senha.";
+                }
+            },
+            error: function(e){
+                $('#logando').hide();
+                alert('Erro ao logar');
+            }
+        });
+    });
 </script>
 @endsection

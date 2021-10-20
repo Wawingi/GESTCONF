@@ -1,70 +1,46 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Route::post('logar', 'Auth\LoginController@authenticate');
 
-Route::get('/dashboard', function () {
-    //dd('WAMBA');
-    return view('layouts.dashboard');
-});
-Route::post('logar', 'UtilizadorController@logar');
-Route::get('logout', 'UtilizadorController@logout');
+Auth::routes(['register' => false]);
 
-Route::get('listarDepartamentos','DefinicoesController@listarDepartamentos');
-Route::get('registarDepartamento','DefinicoesController@registarDepartamento');
-Route::get('registarDestino','DefinicoesController@registarDestino');
-Route::get('registarCategoria','DefinicoesController@registarCategoria');
-
-Route::get('listarFuncionarios','PessoaController@listarFuncionarios');
-Route::post('registarFuncionario','PessoaController@registarFuncionario');
-
-Route::get('marcacoesVisitantePage', function () {
-    return view('pages.listarMarcacaoVisitante');
+//Rotas para Utilizador e Pessoa
+Route::middleware(['auth'])->group(function () { 
+    Route::get('dashboard', function () {
+        return view('layouts.dashboard');
+    });
+    Route::get('registarUtilizador', function () {
+        return view('pages.registoUtilizador');
+    });
+    Route::post('registarUtilizador', 'UtilizadorController@registarUtilizador');
+    Route::get('listarUtilizadores', 'UtilizadorController@getUsers');
+    Route::get('modificarEstado/{id_user}/{estado}', 'UtilizadorController@modificarEstado');
 });
 
-//Marcações
-Route::get('listarMarcacaoVisitante','MarcacaoController@listarMarcacaoVisitante');
-Route::post('registarMarcacao','MarcacaoController@registarMarcacao');
-Route::get('verVisitante/{id}','MarcacaoController@verVisitante');
-Route::get('listarMarcacaoAllVisita','MarcacaoController@getAllMarcacaoVisita');
-Route::get('marcarSaida/{id}','MarcacaoController@marcarSaida');
-Route::get('marcacoesVisitaDepartamento','MarcacaoController@listarMarcacaoDepartamento');
-Route::get('historicoVisitaDepartamento','MarcacaoController@listarhistoricoVisitaDepartamento');
+//Rotas para Pessoal(Delegado,Serviço e Imprensa)
+Route::middleware(['auth'])->group(function () { 
+    Route::get('registarPessoal', function () {
+        return view('pessoal.registarPessoal');
+    });
+    Route::post('registarPessoa','PessoaController@registarPessoa');
 
-Route::post('registarAtendimento','AtendimentoController@registarAtendimento');
-
-Route::get('listarProdutosGeral','ProdutoController@listarProdutosGeral');
-Route::post('registarProduto','ProdutoController@registarProduto');
-Route::get('verProduto/{id}','ProdutoController@verProduto');
-Route::post('registarSaida','ProdutoController@registarSaida');
-Route::get('listarSaidasProduto/{idProduto}','ProdutoController@listarSaidasProduto');
-Route::get('listarSaidas','ProdutoController@listarSaidas');
-Route::get('verNotaEntrega/{id}/{referencia}','ProdutoController@verNotaEntrega');
-
-Route::get('entregarProduto', function(){
-    return view('pages.entregarProduto');
+    Route::get('listarDelegado', function () {
+        return view('pessoal.listarDelegado');
+    });
+    Route::get('listarImprensa', function () {
+        return view('pessoal.listarImprensa');
+    });
+    Route::get('listarServico', function () {
+        return view('pessoal.listarServico');
+    });
+    Route::get('getPessoas/{tipo}','PessoaController@listarPessoas');
+    Route::get('gerarPasse/{id_pessoa}','PessoaController@gerarPasse');
+    
+    Route::get('contadorEstatistica','PessoaController@contadorEstatistica');
 });
-
-Route::get('verNotaEntregaa', function(){
-    return view('pages.pdfNotaEntrega');
-});
-
-
 
 
