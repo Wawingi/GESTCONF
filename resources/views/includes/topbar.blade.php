@@ -7,12 +7,12 @@
             <div class="logo-box">
                 <a href="{{ url('dashboard') }}" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="{{ url('images/logo.png') }}" alt="" height="55">
+                        <img src="{{ url('images/logo_black.png') }}" alt="" height="55">
                         <!-- <span class="logo-lg-text-light">Xeria</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-sm-text-dark">X</span> -->
-                        <img src="{{ url('images/logo.png') }}" alt="" height="24">
+                        <img src="{{ url('images/logo_black.png') }}" alt="" height="24">
                     </span>
                 </a>
             </div>

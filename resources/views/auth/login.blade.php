@@ -9,7 +9,7 @@
                         <form id="formularioLogar" method="post">
                             @csrf
                             <div class="text-center">
-                                <h3><img height="100" src="{{url('images/logo.png')}}"></h3>
+                                <h3><img height="100" src="{{url('images/logo_black.png')}}"></h3>
                             </div><br><br>
                                 <img  id="logando" src="{{ url('images/loader.gif') }}"/>
                                 <div class="form-group mb-3">

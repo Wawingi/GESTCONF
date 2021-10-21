@@ -110,7 +110,7 @@
 		rules: {					
 			nome: {
 				required: true,
-                pattern: /^[a-zA-ZáÁàÀçÇéÉèÈõÕóÓãÃúÚ\s]+$/
+                pattern: /^[a-zA-ZáÁàÀçÇéÉèÈíÍõÕóÓãÃúÚ\s]+$/
 			},
 			username: {
 				required: true,

@@ -24,11 +24,7 @@
 
 		<script src="{{ asset('js/jquery-3.4.1.js') }}"></script>	
         <script src="{{ asset('js/jquery.validate.js') }}"></script>
-        <script src="{{ asset('js/additional-methods.js') }}"></script>
-        
-        
-></script>
-        
+        <script src="{{ asset('js/additional-methods.js') }}"></script>        
 	</head>
     <body>      
         <!-- PAGINA INICIAL PARA USER LOGADO -->
