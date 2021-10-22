@@ -144,4 +144,13 @@ class PessoaController extends Controller
         $contServico=Pessoa::getContabilidade(3);
         return view('layouts.contabilidade',compact('contDelegado','contImprensa','contServico'));
     }
+
+    public function pesquisarPessoa(Request $request){
+        $pessoa=Pessoa::where('id',$request->numero_ordem)->select('id','nome')->first();
+        return $pessoa;
+    }
+
+    public function marcarPresenca(Request $request){
+        dd($request);
+    }
 }

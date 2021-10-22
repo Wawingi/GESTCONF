@@ -19,6 +19,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('registarUtilizador', 'UtilizadorController@registarUtilizador');
     Route::get('listarUtilizadores', 'UtilizadorController@getUsers');
     Route::get('modificarEstado/{id_user}/{estado}', 'UtilizadorController@modificarEstado');
+    Route::get('verPerfil', 'UtilizadorController@verPerfil');
+    Route::post('trocarSenha', 'UtilizadorController@trocarSenha');
 });
 
 //Rotas para Pessoal(Delegado,Serviço e Imprensa)
@@ -41,6 +43,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('gerarPasse/{id_pessoa}','PessoaController@gerarPasse');
     
     Route::get('contadorEstatistica','PessoaController@contadorEstatistica');
+});
+
+//Rotas para Pessoal(Delegado,Serviço e Imprensa)
+Route::middleware(['auth'])->group(function () { 
+    Route::get('marcarPresenca',function(){
+        return view('pages.marcarPresenca');
+    });
+    Route::post('pesquisarPessoa','PessoaController@pesquisarPessoa');
+    Route::post('marcarPresenca','PessoaController@marcarPresenca');
 });
 
 

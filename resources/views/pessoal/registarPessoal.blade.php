@@ -70,7 +70,7 @@
                                     <li class="nav-item">
                                         <a valor="1" href="#account-2" data-toggle="tab" class="nav-link mudarAba">
                                             <span class="number">1</span>
-                                            <span class="d-none d-sm-inline">Dados Pessoas</span>
+                                            <span class="d-none d-sm-inline">Dados Pessoais</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -135,57 +135,17 @@
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="form-group mb-3">
-                                                    <label>Local de Emissão</label>
-                                                    <input type="text" class="form-control form-control-sm" name="local_emissao" id="local_emissao" placeholder="Informe o local de emissão">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Data de Emissão</label>
-                                                    <input type="date" class="form-control form-control-sm" name="data_emissao" id="data_emissao" placeholder="Informe o local de emissão">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Data de Validade</label>
-                                                    <input type="date" class="form-control form-control-sm" name="data_validade" id="data_validade" placeholder="Informe o local de emissão">                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
                                                     <label>Data de nascimento</label>
                                                     <input type="date" class="form-control form-control-sm" name="data_nascimento" id="data_nascimento">                                   
                                                 </div>
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="form-group mb-3">
-                                                    <label>Província</label>
-                                                    <input type="text" class="form-control form-control-sm" name="provincia" id="provincia" placeholder="Informe a província">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Município</label>
-                                                    <input type="text" class="form-control form-control-sm" name="municipio" id="municipio" placeholder="Informe o município">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Bairro</label>
-                                                    <input type="text" class="form-control form-control-sm" name="bairro" id="bairro" placeholder="Informe o município">                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="form-group mb-3">
                                                     <label>Cartão Eleitoral</label>
                                                     <input type="text" class="form-control form-control-sm" name="cartao_eleitoral" id="cartao_eleitoral" placeholder="Informe o número do cartão">                                   
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-3">
                                                 <div class="form-group mb-3">
                                                     <label>Grupo</label>
                                                     <input type="text" class="form-control form-control-sm" name="grupo" id="grupo" placeholder="Informe o número do cartão">                                   
@@ -214,54 +174,13 @@
                                                     </select>                                          
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Distrito</label>
-                                                    <input type="text" class="form-control form-control-sm" name="distrito" id="distrito" placeholder="Informe o distrito">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Bairro</label>
-                                                    <input type="text" class="form-control form-control-sm" name="bairro_actual" id="bairro_actual" placeholder="Informe o bairro">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Rua</label>
-                                                    <input type="text" class="form-control form-control-sm" name="rua" id="rua" placeholder="Informe a rua">                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>Casa | Apartamento | Edifício</label>
-                                                    <input type="text" class="form-control form-control-sm" name="casa" id="casa" placeholder="Informe o nº da casa">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-2">
                                                 <div class="form-group mb-3">
                                                     <label>Telefone</label>
                                                     <input type="number" class="form-control form-control-sm" name="telefone" id="telefone" placeholder="Informe o contacto telefónico">                                   
                                                 </div>
                                             </div>
                                             <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>WhatsApp</label>
-                                                    <input type="text" class="form-control form-control-sm" name="whatsapp" id="whatsapp" placeholder="Informe o contacto do whatsapp">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group mb-3">
-                                                    <label>E-mail</label>
-                                                    <input type="text" class="form-control form-control-sm" name="email" id="email" placeholder="Informe o email">                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
                                                 <div class="form-group mb-3">
                                                     <label for="funcao">Habilitações</label>
                                                     <select id="habilitacoes" name="habilitacoes" class="custom-select custom-select-sm">
@@ -273,32 +192,12 @@
                                                     </select>                                          
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group mb-3">
-                                                    <label>Área de Especialização</label>
-                                                    <input type="text" class="form-control form-control-sm" name="especializacao" id="especializacao" placeholder="Informe área de especialização">                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="form-group mb-3">
                                                     <label>Profissão</label>
                                                     <input type="text" class="form-control form-control-sm" name="profissao" id="profissao" placeholder="Informe a profissão">                                   
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="form-group mb-3">
-                                                    <label>Local de trabalho</label>
-                                                    <input type="text" class="form-control form-control-sm" name="local_trabalho" id="local_trabalho" placeholder="Informe o local de trabalho">                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="form-group mb-3">
-                                                    <label>Cargo | Função</label>
-                                                    <input type="text" class="form-control form-control-sm" name="cargo" id="cargo" placeholder="Informe o cargo">                                   
-                                                </div>
-                                            </div>
+                                            </div>             
                                         </div>
                                     </div>
 
@@ -382,6 +281,11 @@
             document.getElementById("show_delegado").style.display = 'block';
         }
     }
+
+    //Disable future date
+    var today = new Date().toISOString().split('T')[0];
+	document.getElementsByName("data_nascimento")[0].setAttribute('max', today);
+	document.getElementsByName("data_ingresso")[0].setAttribute('max', today);
 
     //Secção do Form Wizard
     $(document).ready(function() {
@@ -532,14 +436,7 @@
                 minlength:9,
                 maxlength:9
             },
-
             profissao: {
-                required: true,
-            },
-            local_trabalho: {
-                required: true,
-            },
-            cargo: {
                 required: true,
             },
             data_ingresso: {
@@ -569,17 +466,9 @@
             data_nascimento: {
                 required: "A data nascimento deve ser fornecida"
             },    
-
-
             profissao: {
                 required: "A profissao deve ser informada",
-            },
-            local_trabalho: {
-                required: "O local de trabalho deve ser informada",
-            },
-            cargo: {
-                required: "O cargo deve ser informada",
-            },            
+            },       
             data_ingresso: {
                 required: "A data ingresso deve ser fornecida"
             }, 

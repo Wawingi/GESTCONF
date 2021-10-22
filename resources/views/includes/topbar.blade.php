@@ -43,7 +43,7 @@
                         </div>
 
                         <!-- item-->
-                        <a href="#" class="dropdown-item notify-item">
+                        <a href="{{url('verPerfil')}}" class="dropdown-item notify-item">
                             <i class="remixicon-account-circle-line"></i>
                             <span>Meu Perfil</span>
                         </a>
@@ -153,6 +153,11 @@
                         </a>
                     </li>
 
+                    <li class="has-submenu">
+                        <a href="{{ url('marcarPresenca') }}">
+                            <i class="fas fa-qrcode"></i>Presença
+                        </a>
+                    </li>
                 </ul>
                 <div class="clearfix"></div>
             </div>

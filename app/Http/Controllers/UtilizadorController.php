@@ -61,4 +61,32 @@ class UtilizadorController extends Controller
             return back()->with('error','Houve um erro ao alterar o estado da conta.');
         }
     }
+
+    public function verPerfil(){
+        return view('pages.verPerfil');
+    }
+
+    public function trocarSenha(Request $request){
+        $validatedData = $request->validate([
+            'novasenha' => ['required', 'string', 'min:6'],
+            'confirmarsenha' => ['required', 'string', 'min:6', 'same:novasenha'],
+        ], [
+            //Mensagens de validação de erros
+            'novasenha.required' => 'A nova senha deve ser fornecida',
+            'confirmarsenha.required' => 'Este campo deve ser preenchido.',
+            'novasenha.min' => 'A senha deve possuir no mínimo 6 dígitos',
+            'confirmarsenha.min' => 'A senha de confirmação deve possuir no mínimo 6 dígitos',
+            'confirmarsenha.same' => 'As senhas fornecidas não coincidem, por favor forneça senhas iguais',
+        ]);
+        //dd(Auth::user()->id);
+        if (DB::table('users')
+            ->where('estado', 1)
+            ->where('id', '=', Auth::user()->id)
+            ->update(['password' => Hash::make($request->novasenha)])) 
+        {
+            return back()->with('info','Alterado com sucesso.');
+        } else {
+            return back()->with('info','Erro ao alterar.');
+        }
+    }
 }
